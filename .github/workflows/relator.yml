@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
+      - name: Delay to prevent multiple runs
+        run: sleep 10
       - name: Send Telegram notification for new issue
         uses: reagento/relator@ec9edd735e5b241ee461f0b34021c8aa58e083c2 # v1.5.0
         if: contains(github.event.issue.labels.*.name, 'help wanted')
