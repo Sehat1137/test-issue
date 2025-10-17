@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Send Telegram notification for new issue
-        uses: reagento/relator@983edccef69ef9a25b97552daaeaf0f183b470f4 # v1.5.0
+        uses: reagento/relator@ec9edd735e5b241ee461f0b34021c8aa58e083c2 # v1.5.0
         if: contains(github.event.issue.labels.*.name, 'help wanted')
         with:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
