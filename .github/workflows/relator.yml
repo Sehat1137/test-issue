@@ -10,16 +10,14 @@ permissions:
 jobs:
   notify:
     name: "Telegram notification"
+    if: github.event.label.name == 'help wanted'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Delay to prevent multiple runs
-        run: sleep 10
       - name: Send Telegram notification for new issue
         uses: reagento/relator@e981efa245d733b5ee5733e9cd709c2f14d8de28 # v1.5.1
-        if: github.event.label.name == 'help wanted'
         with:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           tg-chat-id: "@bebraqwez"
-          html-template: "🚀 <b>New issue to <a href=/{repository}>{repository}</a> by <a href=/{user}>@{user}</a> </b> #${{ github.event.repository.name }} <br/>📝 <b>{title}</b> (<a href='{url}'>#{id}</a>)<br/>{body}{labels}<br/>{promo}"
+          html-template: "🚀 <b>New issue to <a href=/{repository}>{repository}</a> by <a href=/{user}>@{user}</a> </b><br/>📝 <b>{title}</b> (<a href='{url}'>#{id}</a>)<br/>{body}#django_modern_rest{labels}<br/>{promo}"
           github-token: ${{ secrets.GITHUB_TOKEN }}
