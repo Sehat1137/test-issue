@@ -4,9 +4,9 @@ on:
   issues:
     types: [labeled]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.issue.number }}-${{ github.event.action }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.event.issue.number }}-${{ github.event.action }}
+#   cancel-in-progress: true
 
 permissions:
   issues: read
@@ -21,7 +21,7 @@ jobs:
         run: sleep 10
       - name: Send Telegram notification for new issue
         uses: reagento/relator@ec9edd735e5b241ee461f0b34021c8aa58e083c2 # v1.5.0
-        if: contains(github.event.issue.labels.*.name, 'help wanted')
+        if: github.event.label.name == 'help wanted'
         with:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           tg-chat-id: "@bebraqwez"
