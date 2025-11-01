@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Send Telegram notification for new issue
-        uses: reagento/relator@e981efa245d733b5ee5733e9cd709c2f14d8de28 # v1.5.1
+        uses: reagento/relator@a1abbd11a46336feb79e9b3e0dbf7ebd3e0a2c6b # v1.5.1
         with:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           tg-chat-id: "@bebraqwez"
