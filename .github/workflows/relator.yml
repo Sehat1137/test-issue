@@ -2,7 +2,7 @@ name: Event Notifier
 
 on:
   issues:
-    types: [labeled]
+    types: [opened]
 
 permissions:
   issues: read
