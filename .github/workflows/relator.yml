@@ -10,7 +10,6 @@ permissions:
 jobs:
   notify:
     name: "Telegram notification"
-    if: github.event.label.name == 'help wanted'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
