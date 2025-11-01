@@ -19,5 +19,5 @@ jobs:
         with:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           tg-chat-id: "@bebraqwez"
-          html-template: "🚀 <b>New issue to <a href=/{repository}>{repository}</a> by <a href=/{user}>@{user}</a> </b><br/>📝 <b>{title}</b> (<a href='{url}'>#{id}</a>)<br/>{body}#django_modern_rest {labels}<br/>{promo}"
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          custom-labels: 'test-issue'
