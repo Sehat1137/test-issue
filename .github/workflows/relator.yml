@@ -19,4 +19,4 @@ jobs:
           tg-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           tg-chat-id: "@bebraqwez"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          custom-labels: 'test-issue'
+          custom-labels: 'test-issue,zed'
